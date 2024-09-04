@@ -35,7 +35,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]){
                     sh "docker build -t docker-hub-id/myapp:${IMAGE_NAME} ."
                     sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh "docker push docker-hub-id/myapp:${IMAGE_NAME}"
+                    sh "docker push jruiz321/docker-project:${IMAGE_NAME}"
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                         sh 'git config --global user.email "jenkins@me.com"'
                         sh 'git config --global user.name "jenkins"'
-                        sh "git remote set-url origin https://$USER:$PASS@gitlab.com/twn-devops-bootcamp/latest/08-jenkins/jenkins-exercises.git"
+                        sh "git remote set-url origin https://$USER:$PASS@github.com/JustinRuiz321/jenkins-project.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:jenkins-jobs'
