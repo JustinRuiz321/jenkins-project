@@ -41,7 +41,7 @@ pipeline {
         stage('commit version update') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                         sh 'git config --global user.email "jenkins@me.com"'
                         sh 'git config --global user.name "jenkins"'
                         sh "git remote set-url origin https://$USER:$PASS@github.com/JustinRuiz321/jenkins-project.git"
