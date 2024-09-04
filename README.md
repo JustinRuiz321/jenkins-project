@@ -1,6 +1,7 @@
-#### This project is for the DevOps bootcamp exercise for
+#### Dockerhub Repo
+![alt text](<app/images/Screenshot 2024-09-04 at 1.09.22 PM.png>)
 
-#### "Build Automation with Jenkins"
+#### Successful Console Output
+![alt text](<app/images/Screenshot 2024-09-04 at 1.10.31 PM.png>)
 
-##### Test
 
