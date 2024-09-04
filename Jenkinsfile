@@ -1,4 +1,4 @@
-@Library('jenkins-library@main')_
+@Library('jenkins-library@main') _
 
 pipeline {
     agent any
@@ -10,23 +10,26 @@ pipeline {
             steps {
                 script {
                     incrementVersion()
-                    }
                 }
             }
         }
         
         stage('run tests') {
             steps {
-               script {
-                runTests()
-               }
+                script {
+                    runTests()
+                }
             }
         }
+        
         stage('Build and Push docker image') {
             steps {
-                dockerBuild()
+                script {
+                    dockerBuild()
+                }
             }
         }
+        
         stage('commit version update') {
             steps {
                 script {
@@ -34,6 +37,5 @@ pipeline {
                 }
             }
         }
+    }
 }
-
-
