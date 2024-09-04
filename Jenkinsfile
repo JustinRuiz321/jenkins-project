@@ -15,7 +15,6 @@ pipeline {
 
                         env.IMAGE_NAME = "$version-$BUILD_NUMBER"
                     }
-                    env.IMAGE_NAME = "$version-$BUILD_NUMBER"
                 }
             }
         }
